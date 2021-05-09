@@ -71,6 +71,17 @@ $ git add .
 
 $ git commit -m 'Projeto brewer-paulo pronto para producao'
 
+
+// Enviar aplicação para o heroku
+
+$ git push heroku master
+
+// Adicionar outro repositório remoto git para enviar o projeto 
+
+$ git remote add nome_do_repositorio_git
+
+Obs.: Executar o comando git remote -v para ver os repositorios gits adicionados
+
 Mais informações:
 https://devcenter.heroku.com/articles/heroku-cli
 
