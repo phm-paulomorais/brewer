@@ -1,0 +1,74 @@
+Comandos básicos Heroku:
+
+
+$ heroku login
+
+
+// Criar aplicação no heroku:
+
+$ heroku create nome_da_app (nome da aplicação deve ser único)
+
+// https://brewer-paulo.herokuapp.com/ | https://git.heroku.com/brewer-paulo.git
+
+
+$ git init
+
+
+// Add repositório no heroku
+
+$ git remote add heroku nome_do_repositorio (https://git.heroku.com/brewer-paulo.git)
+
+
+// Saber endereço/nome do repositório no heroku
+
+$ git remote -v
+
+Exemplo:
+phm@phm:~/eclipse-workspace/brewer$ git remote -v
+heroku	https://git.heroku.com/brewer-paulo.git (fetch)
+heroku	https://git.heroku.com/brewer-paulo.git (push)
+
+
+// Criar SGBD mysql no heroku
+
+$ heroku addons:create jawsdb
+
+
+// Ver as configurações do banco
+
+$ heroku config:get JAWSDB_URL
+
+mysql://usuario:senha@host:3306/nome_da_base_de_dados
+
+
+// Empacotar a aplicação usando o profile local (configurado no pom.xml, comando deve ser executado na pasta raiz do projeto que tem o arquivo pom.xml). O clean apaga a pasta target e recompila o projeto 
+novamente:
+
+$ mvn clean package -Plocal
+
+
+// Verificar se tem a palavra mysql no arquivos que foram empacotados
+
+O comando abaixo descompacta o arquivo brewer e lista os arquivos. Essa saída é mandada para o grep para verificar se tem o mysql num dos arquivos listados
+
+$ tar -tvf target/brewer.war | grep mysql
+
+
+// Definir variável de ambiente e valor no Heroku
+
+$ heroku config:set SENDGRID_PASSWORD=valor_da_variavel
+
+
+// Verificar status do projeto no git
+
+$ git status
+
+// Adicionar os arquivos no git
+
+$ git add .
+
+Mais informações:
+https://devcenter.heroku.com/articles/heroku-cli
+
+
+
