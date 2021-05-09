@@ -67,6 +67,10 @@ $ git status
 
 $ git add .
 
+// Fazer o commit
+
+$ git commit -m 'Projeto brewer-paulo pronto para producao'
+
 Mais informações:
 https://devcenter.heroku.com/articles/heroku-cli
 
