@@ -32,7 +32,7 @@
 		<thumbnailator.version>0.4.8</thumbnailator.version>
 		
 		<!-- AWS SDK - S3 -->
-		<aws-java-sdk-s3.version>1.10.77</aws-java-sdk-s3.version>
+		<aws-java-sdk-s3.version>1.11.253</aws-java-sdk-s3.version>
 		
 		<!-- JasperReports -->
 		<jasperreports.version>6.3.0</jasperreports.version>
