@@ -30,7 +30,8 @@ public class CadastroCervejaService {
 	public void excluir(Cerveja cerveja) {
 		try {
 			String foto = cerveja.getFoto();
-			cervejas.delete(cerveja.getCodigo());
+			//cervejas.delete(cerveja.getCodigo());
+			cervejas.delete(cerveja);
 			cervejas.flush();
 			fotoStorage.excluir(foto);
 		} catch (PersistenceException e) {

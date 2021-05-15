@@ -82,6 +82,15 @@ $ git remote add nome_do_repositorio_git
 
 Obs.: Executar o comando git remote -v para ver os repositorios gits adicionados
 
+// Ver os logs da aplicação no Heroku
+
+$ heroku logs --tail
+
+
+// Executar aplicação deployed no heroku (https://brewer-paulo.herokuapp.com/)
+
+$ heroku open
+
 Mais informações:
 https://devcenter.heroku.com/articles/heroku-cli
 

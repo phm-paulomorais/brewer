@@ -3,6 +3,7 @@ package com.algaworks.brewer.thymeleaf;
 import java.util.HashSet;
 import java.util.Set;
 
+import org.springframework.stereotype.Component;
 import org.thymeleaf.dialect.AbstractProcessorDialect;
 import org.thymeleaf.processor.IProcessor;
 import org.thymeleaf.standard.StandardDialect;
@@ -13,6 +14,7 @@ import com.algaworks.brewer.thymeleaf.processor.MessageElementTagProcessor;
 import com.algaworks.brewer.thymeleaf.processor.OrderElementTagProcessor;
 import com.algaworks.brewer.thymeleaf.processor.PaginationElementTagProcessor;
 
+@Component
 public class BrewerDialect extends AbstractProcessorDialect {
 
 	public BrewerDialect() {

@@ -64,10 +64,10 @@ public class VendasController {
 	@Autowired
 	private Mailer mailer;
 	
-	@InitBinder("venda")
-	public void inicializarValidador(WebDataBinder binder) {
-		binder.setValidator(vendaValidator);
-	}
+//	@InitBinder("venda")
+//	public void inicializarValidador(WebDataBinder binder) {
+//		binder.setValidator(vendaValidator);
+//	}
 	
 	@GetMapping("/nova")
 	public ModelAndView nova(Venda venda) {
@@ -131,7 +131,7 @@ public class VendasController {
 	
 	@PostMapping("/item")
 	public ModelAndView adicionarItem(Long codigoCerveja, String uuid) {
-		Cerveja cerveja = cervejas.findOne(codigoCerveja);
+		Cerveja cerveja = cervejas.getOne(codigoCerveja);
 		tabelaItens.adicionarItem(uuid, cerveja, 1);
 		return mvTabelaItensVenda(uuid);
 	}
@@ -153,7 +153,7 @@ public class VendasController {
 	@GetMapping
 	public ModelAndView pesquisar(VendaFilter vendaFilter,
 			@PageableDefault(size = 3) Pageable pageable, HttpServletRequest httpServletRequest) {
-		ModelAndView mv = new ModelAndView("/venda/PesquisaVendas");
+		ModelAndView mv = new ModelAndView("venda/PesquisaVendas");
 		mv.addObject("todosStatus", StatusVenda.values());
 		mv.addObject("tiposPessoa", TipoPessoa.values());
 		
@@ -183,7 +183,9 @@ public class VendasController {
 		try {
 			cadastroVendaService.cancelar(venda);
 		} catch (AccessDeniedException e) {
-			return new ModelAndView("/403");
+			ModelAndView mv = new ModelAndView("error");
+			mv.addObject("status", 403);
+			return mv;
 		}
 		
 		attributes.addFlashAttribute("mensagem", "Venda cancelada com sucesso");
