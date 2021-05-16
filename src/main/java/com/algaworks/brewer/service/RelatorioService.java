@@ -7,6 +7,7 @@ import java.time.LocalTime;
 import java.time.ZoneId;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 import javax.sql.DataSource;
@@ -37,6 +38,7 @@ public class RelatorioService {
 		parametros.put("format", "pdf");
 		parametros.put("data_inicio", dataInicio);
 		parametros.put("data_fim", dataFim);
+		parametros.put("REPORT_LOCALE", new Locale("pt", "BR"));
 		
 		InputStream inputStream = this.getClass()
 				.getResourceAsStream("/relatorios/relatorio_vendas_emitidas.jasper");

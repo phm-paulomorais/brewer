@@ -1,8 +1,11 @@
 package com.algaworks.brewer.config;
 
 
+import java.math.BigDecimal;
+
 import javax.cache.Caching;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.cache.jcache.JCacheCacheManager;
@@ -37,6 +40,8 @@ public class WebConfig implements WebMvcConfigurer {
 //		bundle.setDefaultEncoding("UTF-8"); // https://www.utf8-chartable.de/
 //		return bundle;
 //	}
+	
+
 	
 
 }

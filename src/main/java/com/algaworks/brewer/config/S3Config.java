@@ -23,6 +23,7 @@ public class S3Config {
 	@Autowired
 	private Environment env;
 
+	@SuppressWarnings("deprecation")
 	@Bean
 	public AmazonS3 amazonS3() {
 		AWSCredentials credenciais = new BasicAWSCredentials(
